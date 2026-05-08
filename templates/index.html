@@ -1,0 +1,17 @@
+<h1>Events</h1>
+
+<a href="/event/new">Create Event</a>
+
+<hr>
+
+{% for event in events %}
+    <h2>{{ event[1] }}</h2>
+    <p>Date: {{ event[2] }}</p>
+    <p>Location: {{ event[3] }}</p>
+    <p>Created by: {{ event[4] }}</p>
+
+    <a href="/join/{{ event[0] }}">Join</a>
+    <a href="/delete/{{ event[0] }}">Delete admin only</a>
+
+    <hr>
+{% endfor %}

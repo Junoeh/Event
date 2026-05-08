@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Website</title>
+</head>
+<body>
+
+<h1>Event Website</h1>
+
+<a href="/">Home</a>
+
+{% if session.user_id %}
+    <a href="/event/new">Create Event</a>
+    <a href="/logout">Logout</a>
+{% else %}
+    <a href="/login">Login</a>
+    <a href="/register">Register</a>
+{% endif %}
+
+<hr>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>
