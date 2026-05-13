@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Send inn spørsmål</h2>
+
+<form method="POST">
+    <textarea name="sporsmal" placeholder="Skriv spørsmålet ditt her" required></textarea>
+    <br><br>
+
+    <button type="submit">Send inn</button>
+</form>
+
+{% endblock %}

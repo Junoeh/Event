@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Slett FAQ-data</h2>
+
+<p>Skriv inn emailen din for å slette alle spørsmålene dine</p>
+
+<form method="POST">
+    <input type="email" name="email" placeholder="Din e-post" required>
+    <br><br>
+
+    <button type="submit">Slett mine spørsmål</button>
+</form>
+
+{% endblock %}
