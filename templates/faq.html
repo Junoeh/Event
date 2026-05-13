@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>FAQ</h2>
+
+<h3>Vanlige spørsmål</h3>
+
+<h4>Hvordan logger jeg inn?</h4>
+<p>Du kan logge inn ved å trykke på Login og skrive inn email og passord.</p>
+
+<h4>Hvordan joiner jeg et event?</h4>
+<p>Du må være logget inn. Deretter kan du trykke på Join på et event.</p>
+
+<h4>Hvordan lager jeg et event?</h4>
+<p>Når du er logget inn, du kan du trykke på "Create Even"t og lage en event.</p>
+
+<h4>Hvordan er kontoen min beskyttet?</h4>
+<p>Konto en din er beskyttet gjennom password hashing og en limit på log in forsøk</p>
+
+
+
+
+<hr>
+
+<h3>spørsmål fra andre brukere</h3>
+
+{% for question in user_questions %}
+    <p><strong>Spørsmål:</strong> {{ question[0] }}</p>
+    <p><strong>Sendt inn:</strong> {{ question[1] }}</p>
+    <p><strong>Bruker:</strong> {{ question[2] }}</p>
+    <hr>
+{% endfor %}
+
+<a href="/faq/ask">Send inn spørsmål</a>
+<br>
+<a href="/faq/delete-data">Slett spørsmålen mine</a>
+
+{% endblock %}

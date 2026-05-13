@@ -1,17 +1,28 @@
-<h1>Events</h1>
+{% extends "base.html" %}
 
-<a href="/event/new">Create Event</a>
+{% block content %}
 
-<hr>
+<h2>Events</h2>
 
 {% for event in events %}
-    <h2>{{ event[1] }}</h2>
-    <p>Date: {{ event[2] }}</p>
-    <p>Location: {{ event[3] }}</p>
-    <p>Created by: {{ event[4] }}</p>
 
-    <a href="/join/{{ event[0] }}">Join</a>
-    <a href="/delete/{{ event[0] }}">Delete admin only</a>
+    <h3>{{ event[1] }}</h3>
+
+    <p><strong>Date:</strong> {{ event[2] }}</p>
+    <p><strong>Location:</strong> {{ event[3] }}</p>
+    <p><strong>Created by:</strong> {{ event[4] }}</p>
+
+    {% if session.user_id %}
+        <a href="/join/{{ event[0] }}">Join</a>
+        {% if session.is_admin %}
+            <a href="/delete/{{ event[0] }}">Delete</a>
+        {% endif %}
+    {% else %}
+        <p><a href="/login">Login</a> to join this event.</p>
+    {% endif %}
 
     <hr>
+
 {% endfor %}
+
+{% endblock %}

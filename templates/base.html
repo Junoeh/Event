@@ -8,9 +8,11 @@
 <h1>Event Website</h1>
 
 <a href="/">Home</a>
+<a href="/faq">FAQ</a>
 
 {% if session.user_id %}
     <a href="/event/new">Create Event</a>
+    <a href="/faq/ask">Aske question</a>
     <a href="/logout">Logout</a>
 {% else %}
     <a href="/login">Login</a>
